@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mysql:
+    build: ./mysql
+    environment:
+      MYSQL_DATABASE: "MySQL_Test"
+      MYSQL_ROOT_PASSWORD: "1234"
+    ports:
+      - '3306:3306'
+  postgres:
+    build: ./postgres
+    environment:
+      POSTGRES_PASSSWORD: "1234"
+      POSTGRES_DB: "Postgres_Test"
+    ports:
+      - "5432:5432"
+  php:
+    build: ./php
+    ports:
+      - '80:80'
+    volumes:
+      - ./html:/var/www/html
+    links:
+      - mysql
+      - postgres
+volumes:
+  db:
