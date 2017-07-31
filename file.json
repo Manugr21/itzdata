@@ -1,7 +1,7 @@
 {
   "containerDefinitions": [
     {
-      "name": "mywebpage",
+      "name": "manuelwebpage",
       "image": "manugr21/itzdata",
       "cpu": 1,
       "portMappings": [
